@@ -22,9 +22,7 @@ app.post("/", (req, res) => {
   const todos = new toDo(req.body);
   todos
     .save()
-    .then(() => {
-      console.log(todos);
-    })
+    .then(() => {})
     .catch(err => {
       console.log(err);
     });
