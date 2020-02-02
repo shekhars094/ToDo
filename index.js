@@ -5,7 +5,7 @@ require("./db/mongodb");
 const toDo = require("./db/model/todo");
 
 const app = express();
-const port = process.env.port;
+const port = process.env.PORT || 8000;
 
 const publicDirectoryPath = path.join(__dirname + "/public");
 const viewsPath = path.join(__dirname, "./templates/views");
