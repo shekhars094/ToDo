@@ -30,7 +30,7 @@ app.post("/", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  var datas = toDo
+  toDo
     .find()
     .then(data => {
       res.render("index", { name: data });
@@ -38,6 +38,14 @@ app.get("/", (req, res) => {
     .catch(err => {
       console.log(err);
     });
+});
+
+app.post("/Edit", (req, res) => {
+  toDo.findOneAndUpdate({});
+});
+
+app.get("/edit", (req, res) => {
+  res.render("edit");
 });
 
 app.listen(port, () => {

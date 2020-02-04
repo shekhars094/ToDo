@@ -12,8 +12,8 @@ html
         ul
             each n in name
                 li= n.toDoTask
-                    button(class="btn btn-danger float-right" id="danger") Delete
-                    button(class="btn btn-primary float-right" id="edit") Edit
+                    a(class="btn btn-danger float-right" id="danger" href="/delete") Delete
+                    a(class="btn btn-primary float-right" id="edit" href="edit") Edit
                     
 
         

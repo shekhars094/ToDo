@@ -8,6 +8,9 @@ const toDo = mongoose.model("ToDo", {
   completed: {
     type: Boolean,
     default: false
+  },
+  id: {
+    type: Number
   }
 });
 
