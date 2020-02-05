@@ -40,12 +40,36 @@ app.get("/", (req, res) => {
     });
 });
 
-app.post("/Edit", (req, res) => {
-  toDo.findOneAndUpdate({});
+app.post("/edit", (req, res) => {
+  var taskNumber = req.body.id;
+  toDo
+    .findOneAndUpdate({ taskPriority: taskNumber }, req.body)
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
 
 app.get("/edit", (req, res) => {
   res.render("edit");
+});
+
+app.get("/delete", (req, res) => {
+  res.render("delete");
+});
+
+app.post("/delete", (req, res) => {
+  var ids = req.body.id;
+  toDo
+    .findOneAndDelete({ taskPriority: ids })
+    .then(() => {
+      res.redirect("/");
+    })
+    .catch(err => {
+      console.log(err);
+    });
 });
 
 app.listen(port, () => {

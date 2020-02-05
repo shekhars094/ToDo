@@ -19,3 +19,22 @@ li {
 #edit {
   margin-right: 4px;
 }
+
+#cmpltask {
+  float: right;
+  margin-right: 10px;
+  display: inline;
+}
+
+#save {
+  margin-right: 4px;
+}
+
+p {
+  display: inline;
+}
+
+#check {
+  display: inline-block;
+  margin: 15px;
+}

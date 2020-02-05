@@ -6,5 +6,10 @@ html
         link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
     body
         form(class="form-group container" method="POST")
+            input(type="Number" class="form-control" placeholder="Id of Your Document" name="id")
             input(type="text" class="form-control" placeholder="Edit Your Document" name="toDoTask")
+            p(id="check") Completed 
+            input(type="checkbox" class="form-check-input" id="cmpltask" name="completed" value="true") 
+            label Not_Complete
+            input(type="checkbox" class="form-check-input" id="cmpltask" name="not_completed" value="false") 
             input(type="submit" class="btn btn-primary" value="Edit")

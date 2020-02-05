@@ -1,19 +1,29 @@
 doctype html
-html 
+html
     head
         title Todos
         link(rel="stylesheet", href="css/index.css")
         link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css")
     body
         form(class="form-group container" method="POST")
-            input(type="text" class="form-control" id="todoTask" placeholder="Enter Todays Task" name="toDoTask")
+            input(type="Number" class="form-control" id="todoTask" placeholder="Task Prority Give Number" name="taskPriority")
+            input(type="text" class="form-control" id="pid" placeholder="Enter Todays Task" name="toDoTask")
             input(type="submit" class="btn btn-primary" value="Add")
-        
+
         ul
+
             each n in name
+                
+                p= n.taskPriority
                 li= n.toDoTask
+
                     a(class="btn btn-danger float-right" id="danger" href="/delete") Delete
                     a(class="btn btn-primary float-right" id="edit" href="edit") Edit
+                    if n.completed
+                        a(class="btn btn-primary float-right") Completed
+                    else
+                        a(class="btn btn-danger float-right") Not Completed
+                    
                     
 
         
